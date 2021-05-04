@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 9103182346238202076}
   - component: {fileID: 1900979922022902235}
   - component: {fileID: 563097347749925467}
+  - component: {fileID: 4458757494209582538}
   m_Layer: 0
   m_Name: Computer
-  m_TagString: Untagged
+  m_TagString: ComputerMoniteur
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -97,6 +98,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!65 &4458757494209582538
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1669500173028116325}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.25, y: 1.7, z: 2.38}
+  m_Center: {x: 0.99, y: 0, z: 0.31}
 --- !u!1 &2213578198644732362
 GameObject:
   m_ObjectHideFlags: 0

@@ -206,7 +206,7 @@ GameObject:
   - component: {fileID: 1181775769196435289}
   m_Layer: 0
   m_Name: Creatures
-  m_TagString: Untagged
+  m_TagString: NPC-Creature
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -285,10 +285,10 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3826108363478313664}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 0.99
-  m_Height: 9.09
+  m_Radius: 1.15
+  m_Height: 12.11
   m_Direction: 1
   m_Center: {x: 0.000000059604645, y: 3.59, z: -0.00000008940697}
 --- !u!1 &5375951470249859630
