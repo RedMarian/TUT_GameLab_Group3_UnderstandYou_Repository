@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8471333939843030105}
   - component: {fileID: 8058917313828332345}
+  - component: {fileID: 1116741069583983488}
   m_Layer: 0
   m_Name: ClickHitBox
   m_TagString: Player
@@ -45,6 +46,18 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 2
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1116741069583983488
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5322858001204811749}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f6b85ffe04f5c84097c7178a4d038c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8256625223610358381
 GameObject:
   m_ObjectHideFlags: 0

@@ -61,5 +61,6 @@ crashlytics-build.properties
 UnderstandYou_prototype/Library/
 UnderstandYou_prototype/Temp/
 UnderstandYou_prototype/obj/debug/
+UnderstandYou_prototype\obj\Debug\
 UnderstandYou_prototype/Log/
 UnderstandYou_prototype/Logs/
