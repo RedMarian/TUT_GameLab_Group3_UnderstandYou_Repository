@@ -7,12 +7,14 @@ public class InputManager : MonoBehaviour
     [SerializeField] Player_Movement movement;
     [SerializeField] Player_MouseLook mouseLook;
     [SerializeField] ClickManager clickInput;
+    public PickableObject objectInHand; 
 
     UnderstandYou_prototype controls;
     UnderstandYou_prototype.MouvementCameraActions mouvementCamera;
 
     Vector2 horizontalInput;
     Vector2 mouseInput;
+    
 
 
     // Start is called before the first frame update
@@ -25,7 +27,9 @@ public class InputManager : MonoBehaviour
         mouvementCamera.Move.performed += ctx => horizontalInput = ctx.ReadValue<Vector2>();
         mouvementCamera.Jump.performed += _ => movement.OnJumpPressed();
         mouvementCamera.Look.performed += ctx => mouseInput = ctx.ReadValue<Vector2>();
-        mouvementCamera.Select.performed += ctx => clickInput.ClickEvent();
+        mouvementCamera.Select.started += ctx => clickInput.ClickEvent();
+        mouvementCamera.Select.canceled += _ => objectInHand.LetItGo();
+        //mouvementCamera.LetGo.performed += _ => objectInHand.LetItGo();
     }
 
     private void Update()

@@ -9,6 +9,7 @@ public class ClickManager : MonoBehaviour
     bool computerAvailable = false;
     bool NPCSAvailable = false;
     bool NPCCAvailable = false;
+    bool PickUpObject = true;
 
     [SerializeField] GameObject ActionPrompt;
 
@@ -17,12 +18,21 @@ public class ClickManager : MonoBehaviour
     [SerializeField] GameObject TempUI; //TODO: Has to be replaced with appropriate gameplay session
     [SerializeField] TextMeshProUGUI TempUI_Text;
     [SerializeField] string currentTalkingTarget;
+    public PickableObject objectInMyHand;
+    public InputManager inputManager;
 
-    
+
+
 
     public void ClickEvent()
     {
-        if (computerAvailable)
+            if (PickUpObject)
+        {
+            inputManager.objectInHand = objectInMyHand;
+            objectInMyHand.HoldUp();
+            PickUpObject = false;
+        }
+        else if (computerAvailable)
         {
             ContextMenu.SetActive(true);
             TempUI.SetActive(false);
@@ -45,9 +55,16 @@ public class ClickManager : MonoBehaviour
         }
     }
 
+
     void OnTriggerEnter(Collider col)
     {
         Debug.Log("The tag of this object is: "+ col.tag);
+        if (col.tag == "PickUpObject")
+        {
+            PickUpObject = true;
+            objectInMyHand = col.GetComponent<PickableObject>();
+            ActionPrompt.SetActive(true);
+        } else
         if (col.tag == null)
         {
             Debug.Log("There is no tag associated");
@@ -75,21 +92,23 @@ public class ClickManager : MonoBehaviour
         /*else if (col.tag == "") -------------------------IN CASE WE NEED MORE
         {
             Debug.Log("");
-        }
-        else if (col.tag == "")
-        {
-            Debug.Log("");
         }*/
         currentTalkingTarget = col.name;
 
     }
     void OnTriggerExit(Collider col)
     {
-        if (col.tag == "ComputerMonitor"|| col.tag == "NPC-Creature"|| col.tag == "NPC-Scientist")
+        if (col.tag == "ComputerMonitor"|| col.tag == "NPC-Creature"|| col.tag == "NPC-Scientist" || col.tag == "PickUpObject")
         {
-            computerAvailable = false;
-            NPCSAvailable = false;
-            NPCCAvailable = false;
+            if (col.tag== "ComputerMonitor")
+                computerAvailable = false;
+            else if (col.tag == "NPC-Scientist")
+                NPCSAvailable = false;
+            else if (col.tag == "NPC-Creature")
+                NPCCAvailable = false;
+            else if (col.tag == "PickUpObject")
+                PickUpObject = false;
+
             ActionPrompt.SetActive(false);
         }
     }

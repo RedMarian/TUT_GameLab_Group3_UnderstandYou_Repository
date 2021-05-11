@@ -58,6 +58,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f6b85ffe04f5c84097c7178a4d038c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ActionPrompt: {fileID: 0}
+  ContextMenu: {fileID: 0}
+  computerMenu: {fileID: 0}
+  TempUI: {fileID: 0}
+  TempUI_Text: {fileID: 0}
+  currentTalkingTarget: 
 --- !u!1 &8256625223610358381
 GameObject:
   m_ObjectHideFlags: 0
