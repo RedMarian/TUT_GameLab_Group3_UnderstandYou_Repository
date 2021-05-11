@@ -17087,6 +17087,16 @@ PrefabInstance:
       propertyPath: inputManager
       value: 
       objectReference: {fileID: 1341390967}
+    - target: {fileID: 8256625224525437860, guid: b29155826a3ca3d49bc578d852b5c432,
+        type: 3}
+      propertyPath: sensitivityX
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8256625224525437860, guid: b29155826a3ca3d49bc578d852b5c432,
+        type: 3}
+      propertyPath: sensitivityY
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 8256625224525437864, guid: b29155826a3ca3d49bc578d852b5c432,
         type: 3}
       propertyPath: m_Name
