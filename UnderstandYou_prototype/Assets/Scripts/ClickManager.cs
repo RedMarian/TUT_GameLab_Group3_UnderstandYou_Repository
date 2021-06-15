@@ -21,6 +21,8 @@ public class ClickManager : MonoBehaviour
     public PickableObject objectInMyHand;
     public InputManager inputManager;
 
+    [SerializeField] EmotionGraph TabletGraph;
+    public EmoTankBlackBox currentTargetEmotion;
 
 
 
@@ -81,6 +83,10 @@ public class ClickManager : MonoBehaviour
         }
         else if (col.tag == "NPC-Creature")
         {
+            if (col.gameObject.GetComponent<EmoTankBlackBox>() != null)
+            {
+                currentTargetEmotion = col.gameObject.GetComponent<EmoTankBlackBox>();
+            }
             NPCCAvailable = true;
             ActionPrompt.SetActive(true);
         }
@@ -94,6 +100,7 @@ public class ClickManager : MonoBehaviour
             Debug.Log("");
         }*/
         currentTalkingTarget = col.name;
+        
 
     }
     void OnTriggerExit(Collider col)
@@ -104,13 +111,17 @@ public class ClickManager : MonoBehaviour
                 computerAvailable = false;
             else if (col.tag == "NPC-Scientist")
                 NPCSAvailable = false;
-            else if (col.tag == "NPC-Creature")
-                NPCCAvailable = false;
+            else if (col.tag == "NPC-Creature") { 
+                if (col.gameObject.GetComponent<EmoTankBlackBox>() != null || currentTargetEmotion != null)
+                {
+                    currentTargetEmotion = null;
+                }
+            NPCCAvailable = false;
+            }
             else if (col.tag == "PickUpObject")
                 PickUpObject = false;
 
             ActionPrompt.SetActive(false);
         }
     }
-
 }

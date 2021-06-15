@@ -205,6 +205,7 @@ GameObject:
   - component: {fileID: 2017607761399507134}
   - component: {fileID: 1181775769196435289}
   - component: {fileID: 6127411997530628693}
+  - component: {fileID: 5594558304254510942}
   m_Layer: 0
   m_Name: Creatures
   m_TagString: NPC-Creature
@@ -308,6 +309,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!114 &5594558304254510942
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3826108363478313664}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72a9576ee1d086648b6e5d821e046d7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EmoTank: 14000000030000000b0000000f00000000000000080000000200000000000000
 --- !u!1 &5375951470249859630
 GameObject:
   m_ObjectHideFlags: 0
